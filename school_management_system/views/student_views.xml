@@ -2,9 +2,7 @@
 <odoo>
 	<data>
 		<record id="student_information_list_view" model="ir.ui.view">
-			<field name="name">
-				student.information.list.view
-			</field>
+			<field name="name">student.information.list.view</field>
 			<field name="model">student.information</field>
 			<field name="arch" type="xml">
 				<list>
@@ -70,9 +68,7 @@
 		</record>
 
 		<record id="student_information_calendar_view" model="ir.ui.view">
-			<field name="name">
-				student.information.calendar.view
-			</field>
+			<field name="name">student.information.calendar.view</field>
 			<field name="model">student.information</field>
 			<field name="arch" type="xml">
 				<calendar date_start="date_of_birth" mode="year" color="date_of_birth">
@@ -121,7 +117,6 @@
 			<field name="view_mode">list,form,calendar,kanban,graph,pivot,search</field>
 		</record>
 	</data>
-	<menuitem id="school_details" name="School">
-	</menuitem>
+	<menuitem id="school_details" name="School"></menuitem>
 	<menuitem id="student_info" name="Student data" action="student_data" parent="school_details" sequence="20" />
 </odoo>
