@@ -1,9 +1,6 @@
 from odoo import models ,fields
 
 class StudentDetail(models.Model):
-    """
-    Description: Student Class which is used to store student information
-    """
     _name = "student.information" 
     _description = "This Model is used to store the information of the student "
     _inherit="common.details"
@@ -16,10 +13,6 @@ class StudentDetail(models.Model):
     teacher_id=fields.Many2one(comodel_name='teacher.information',string="class Teacher")
     
     def create(self, vals):
-        """
-        Description: Create a new student record.
-        """
-
         if 'roll_number' in vals:
             existing_student = self.env['student.information'].search([('roll_number', '=', vals['roll_number'])])
             if existing_student:
@@ -27,9 +20,6 @@ class StudentDetail(models.Model):
         return super(StudentDetail, self).create(vals)
 
     def write(self, vals):
-        """
-        Description: Update student records.
-        """
         if 'age' in vals:
             vals['age'] = 21
         return super(StudentDetail, self).write(vals)
